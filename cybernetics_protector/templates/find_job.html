@@ -1,0 +1,68 @@
+{% include 'common_page.html' %}
+<section id="showcase">
+    <div class="container">
+    <table>
+        <tr>
+            <th width="200"></th><th><h2 align="center" style="color: gold;padding-right: 100px"> Apply For Job </h2></th>
+        <th width="300" ></th>
+        <th> <a href="{% url 'home_page' %}" style="color: white">back</a></th></tr>
+    </table>
+
+        {% if data %}
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+</style>
+
+
+<table align="center">
+  <tr style="color: white">
+      <th width="30"></th>
+  <th>Job</th>
+  <th>Qualification</th>
+        <th>Percentage</th>
+  <th>Experiance</th>
+  <th>Location</th>
+  <th>Salary</th>
+        <th>Last_Date</th>
+  <th>Apply_Now</th>
+
+
+  </tr>
+    {% for x in data %}
+  <tr style="color:chocolate;font-weight: bold;font-size: 80%">
+  <td width="30"></td>
+  <td>{{ x.Job }}</td>
+  <td>{{ x.Qualification }}</td>
+    <td>{{ x.Percentage}}</td>
+  <td>{{ x.Experience}}</td>
+  <td>{{ x.Location }}</td>
+  <td>{{ x.Salary }}</td>
+    <td>{{ x.Last_date}}</td>
+  <td><a href="{% url 'apply_job' %}?jobtype={{ x.Job }}" style="color: chocolate">Apply_Now</a> </td>
+
+
+  </tr>
+    {% endfor %}
+
+</table>
+
+        {% endif %}
+
+    </div>
+{% if msg %}
+            <h2 style="color: peru" align="center">{{ msg }}</h2>
+        {% endif %}
+</section>
+{% include 'footer.html' %}

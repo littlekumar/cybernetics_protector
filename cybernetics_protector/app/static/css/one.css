@@ -1,0 +1,59 @@
+body{
+    background-color: #f4f4f4;
+    color: #555;
+    font-family: Arial;
+    font-size:25px;
+    margin: 0;
+}
+.container{
+    width: 100%;
+    overflow: hidden;
+}
+#main-header{
+    background-image: url("1_cybercrimeneu_0.jpg");
+    color: white;
+    text-decoration-color: black;
+    height: 135px;
+}
+#form{
+    padding-bottom: 10px;
+}
+#navbar{
+    background-color: #555555;
+    height: auto;
+}
+#navbar ul{
+    padding: 0;
+    text-align:center;
+
+    list-style: none;
+}
+#navbar li{
+    display: inline;
+}
+#navbar a{
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    padding-right: 35px;
+}
+#showcase{
+    background-image: url('111.jpg');
+    text-align: center;
+    height: 550px;
+}
+
+#main-footer{
+    background-color: gray;
+    text-align: center;
+    color: white;
+    height: auto;
+}
+
+
+
+
+
+
+
+

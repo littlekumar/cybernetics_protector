@@ -1,0 +1,54 @@
+{% include 'common_page.html' %}
+<section id="showcase">
+    <div class="container">
+    <table>
+        <tr>
+            <th width="200"></th><th><h2 align="center" style="color: gold;padding-right: 100px"> Case_Details </h2></th>
+        <th width="300" ></th>
+        <th> <a href="{% url 'home_page' %}" style="color: white">back</a></th></tr>
+    </table>
+
+        {% if data %}
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+</style>
+
+
+<table align="center">
+  <tr style="color: white">
+      <th width="30"></th>
+  <th>CaseId</th>
+  <th>Case Status</th>
+  <th>Agent_id</th>
+
+
+  </tr>
+    {% for x in data %}
+  <tr style="color:chocolate;font-weight: bold;font-size: 80%">
+  <td width="30"></td>
+  <td>{{ x.case_id}}</td>
+  <td>{{ x.cstatus }}</td>
+    <td>{{ x.Agent_id}}</td>
+
+
+  </tr>
+    {% endfor %}
+        {% endif %}
+
+</table>
+
+    </div>
+</section>
+{% include 'footer.html' %}

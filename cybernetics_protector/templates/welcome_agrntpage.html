@@ -1,0 +1,21 @@
+{% include 'common_page.html' %}
+<section id='showcase'>
+    <div class="container">
+        <BR>
+        <table >
+            <tr >
+                <th width="50" height="25" rowspan="5"></th>
+                <th style="text-align: left" height="60"><a href="{% url 'agent_casedetails' %}?id={{ data }}" style="color: white">Case_Details</a></th>
+            <th width="300" rowspan="9"></th>
+            <th rowspan="5" style="text-align: center"><h1 STYLE="color: cornflowerblue;font-size: 60px">WELCOME AGENT</h1></th></tr>
+
+            <tr><th style="text-align: left" height="60"><a href="{% url 'upca' %}?id={{ data }}" style="color: white">Update_Evidence</a></th></tr>
+            <tr><th style="text-align: left" height="60"><a href="{% url 'reports' %}" style="color: white">Reports</a></th></tr>
+                        <tr><th style="text-align: left" height="60"><a href="{% url 'agent_logout' %}" style="color: white">Logout</a></th></tr>
+
+
+
+        </table>
+    </div>
+</section>
+{% include 'footer.html' %}

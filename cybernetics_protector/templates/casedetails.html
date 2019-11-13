@@ -1,0 +1,67 @@
+{% include 'common_page.html' %}
+<section id="showcase">
+    <div class="container">
+    <table>
+        <tr>
+            <th width="200"></th><th><h2 align="center" style="color: gold;padding-right: 100px"> Case_Details </h2></th>
+        <th width="300" ></th>
+        <th> <a href="{% url 'home_page' %}" style="color: white">back</a></th></tr>
+    </table>
+
+        {% if data %}
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+</style>
+
+
+<table align="center">
+  <tr style="color: white">
+      <th width="30"></th>
+  <th>CaseId</th>
+  <th>Case Name</th>
+  <th>Case_Details</th>
+  <th>Doc</th>
+        <th>Evidence</th>
+  <th>Evidence Details</th>
+      <th>Agent_Details</th>
+
+
+  </tr>
+    {% for x in data %}
+  <tr style="color:chocolate;font-weight: bold;font-size: 80%">
+  <td width="30"></td>
+  <td>{{ x.case_id }}</td>
+  <td>{{ x.case_name }}</td>
+    <td>{{ x.case_details}}</td>
+  <td>{{ x.doc}}</td>
+  <td>{{ x.evidence }}</td>
+  <td><img src="{{ x.evidence_img.url }}" height="50" width="50"></td>
+  <td>{% if x.Agent_id == False %}
+            <a href="{% url 'assignto_agent' %}?caseid={{ x.case_id }}" style="color: chocolate">Assign To Agent</a> </td>
+
+      {% else %}
+      {{ x.Agent_id }}
+        {% endif %}
+
+  </tr>
+    {% endfor %}
+
+</table>
+
+        {% endif %}
+
+    </div>
+</section>
+{% include 'footer.html' %}

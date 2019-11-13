@@ -1,0 +1,22 @@
+{% include 'common_page.html' %}
+<section id="showcase">
+    <div class="container">
+        <br>
+        <br>
+
+<table>
+    <tr><th height="50"><a href="{% url 'open_sucess_stories' %}" style="color: white;">Sucess stories</a></th>
+        <th rowspan="3" width="100"></th>
+        <th rowspan="3" style="text-align: left;color: palegoldenrod"><p style="font-size: 70%">Monitoring personal locations with a potentially untrusted server poses privacy threats to the monitored individuals. To this end, we propose a privacy-preserving location monitoring system for wireless sensor networks. In our system, we design two innetwork location anonymization algorithms, namely, resource- and quality-aware algorithms, that aim to enable the system to provide high quality location monitoring services for system users, while preserving personal location privacy. Both algorithms rely on the well established k-anonymity privacy concept, that is, a person is indistinguishable among k persons, to enable trusted sensor nodes to provide the aggregate location information of monitored persons for our system. Each aggregate location is in a form of a monitored area A along with the number of monitored persons residing in A, where A contains at least k persons. The resource-aware algorithm aims to minimize communication and computational cost, while the quality-aware algorithm aims to maximize the accuracy of the aggregate locations by minimizing their monitored areas. To utilize the aggregate location information to provide location monitoring services, we use a spatial histogram approach that estimates the distribution of the monitored persons based on the gathered aggregate location information. Then the estimated distribution is used to provide location monitoring services through answering range queries.
+                </p></th><th rowspan="3" width="100"></th></tr>
+    <tr>
+        <th height="50"><a href="{% url 'find_job' %}" style="color: white">Find jobs</a></th>
+    </tr>
+    <tr>
+        <th height="50"><a href="" style="color: white">Tips&Suggestions</a></th>
+    </tr>
+</table>
+    </div>
+</section>
+
+{% include 'footer.html' %}

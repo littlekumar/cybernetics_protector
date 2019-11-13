@@ -1,0 +1,63 @@
+{% include 'common_page.html' %}
+<section id='showcase'>
+    <div class="container">
+        <br>
+        <form action="{% url 'save_agent' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <table >
+            <tr>
+                <th width="50" height="" rowspan="9"></th>
+                <th style="text-align: left" height="30" rowspan=""><a href="{% url 'add_succes_story' %}" style="color: white">Add success stories</a></th>
+                <th width="200" rowspan="10"></th>
+                <th style="text-align: left;font-size: 40px;color: orange" colspan="2" >Create Agent</th>
+{#                <th width="500" style="text-align: left"><input type="text" name="title" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;"></th>#}
+            </tr>
+{#                    <label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Comment</label>#}
+            <tr><th style="text-align: left" height="30"><a href="{% url 'job_posting' %}" style="color: white">Job posting</a></th>
+                <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Agent_id</label></th>
+                <th style="text-align: left" width="500"><input type="number" name="agent_id" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;" required>
+                 </th>
+            </tr>
+                        <tr><th style="text-align: left" height="30"><a href="{% url 'applyjob_list' %}" style="color: white">View Applicants</a></th>
+                        <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Agent_Name</label></th>
+                <th style="text-align: left" width="500"><input type="text" name="agent_name" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;"required>
+                 </th></tr>
+            <tr><th style="text-align: left" height="30"><a href="{% url 'appointing_agent' %}" style="color: white">Case_Details</a></th>
+            <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Date_Of_Birth</label></th>
+                <th style="text-align: left" width="500"><input type="date" name="dob" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;"required>
+                 </th></tr>
+            <tr><th style="text-align: left" height="30"><a href="{% url 'agent_management' %}" style="color: white">Agent Management</a></th>
+            <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Contact_no</label></th>
+                <th style="text-align: left" width="500"><input type="number" name="contactno" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;"required>
+                 </th></tr>
+            <tr><th style="text-align: left" height="30"><a href="{% url 'reports' %}" style="color: white">Reports</a></th>
+            <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Qualification</label></th>
+                <th style="text-align: left" width="500"><input type="text" name="qualification" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;"required>
+                 </th></tr>
+                        <tr><th style="text-align: left" height="30"><a href="{% url 'admin_logout' %}" style="color: white">Logout</a></th>
+                        <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Address</label></th>
+                            <th style="text-align: left" width="500"><textarea name="addres" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;"required></textarea>
+                 </th></tr>
+            <tr>
+                <th></th><th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Password</label></th>
+                <th style="text-align: left" width="500"><input type="password" name="password" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;"required>
+                 </th>
+            </tr>
+            <tr>
+                <th></th><th style="text-align: center"></th>
+                <th style="text-align: left" width="500"><input type="submit" style="color: white;background: green;
+            border-radius: 5px;width: 22%;padding: 8px;font-size: 20px">
+                 </th>
+            </tr>
+
+
+
+
+        </table>
+        </form>
+        {% if msg %}
+            <h2 align="center" style="color:peru;">{{ msg }}</h2>
+        {% endif %}
+    </div>
+</section>
+{% include 'footer.html' %}

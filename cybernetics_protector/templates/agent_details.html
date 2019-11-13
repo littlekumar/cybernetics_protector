@@ -1,0 +1,71 @@
+{% include 'common_page.html' %}
+<section id="showcase">
+    <div class="container">
+    <table>
+        <tr>
+            <th width="200"></th><th><h2 align="center" style="color: gold;padding-right: 100px"> Agents List </h2></th>
+        <th width="300" ></th>
+        <th> <a href="" style="color: white">back</a></th></tr>
+    </table>
+
+        {% if data %}
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+</style>
+
+
+<table align="center">
+  <tr style="color: white">
+      <th width="30"></th>
+  <th>Agent_Id</th>
+  <th>Agent_name</th>
+              <th>Contact_no</th>
+      <th>Qualification</th>
+  <th>Dob</th>
+  <th>Address</th>
+      {% if data2 %}
+          <th>Update</th>
+          <th>Delete</th>
+          {% endif %}
+
+
+  </tr>
+    {% for x in data %}
+  <tr style="color:chocolate;font-weight: bold;font-size: 80%">
+  <td width="30"></td>
+  <td>{{ x.Agent_id}}</td>
+  <td>{{ x.Agent_Name}}</td>
+    <td>{{ x.Contact_Number}}</td>
+  <td>{{ x.Qualification}}</td>
+  <td>{{ x.Dob }}</td>
+  <td>{{ x.Address}}</td>
+  {% if data2 %}
+      <th><a href="{% url 'update_agent1' %}?id={{ x.Agent_id }}" >Update</a></th>
+      <th><a href="{% url 'delete_agent' %}?id={{ x.Agent_id }}" >Delete</a></th>
+
+  {% endif %}
+
+
+  </tr>
+    {% endfor %}
+
+</table>
+
+        {% endif %}
+
+    </div>
+</section>
+
+{% include 'footer.html' %}

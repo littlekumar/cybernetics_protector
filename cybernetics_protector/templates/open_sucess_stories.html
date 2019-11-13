@@ -1,0 +1,31 @@
+{% include 'common_page.html' %}
+<section id="showcase">
+    <div class="container">
+        <br>
+<table>
+    <tr>
+        <th height="60"><a href="{% url 'open_sucess_stories' %}" style="color: white;">Sucess stories</a></th>
+        <th width="200"></th>
+        <th height="50" style="font-size: 30px;color: khaki">Sucess Stories</th>
+    </tr>
+     <tr>
+        <th height="60"><a href="{% url 'find_job' %}" style="color: white">Find jobs</a></th>
+        <th width="200"></th>
+        <th width="400"><a href="{% url 'story1' %}"><input type="submit" style="color: white;background: green;
+            border-radius: 5px;width: 50%;padding: 9px;font-size: 80%" value="Story1"></a></th>
+    </tr> <tr>
+        <th height="60"><a href="" style="color: white"></a></th>
+        <th width="200"></th>
+        <th width="400"><a href="{% url 'story2' %}"><input type="submit" style="color: white;background: gold;
+            border-radius: 5px;width: 50%;padding: 9px;font-size: 80%" value="Story2"></a></th>
+    </tr>
+    <tr>
+        <th></th><th width="200"></th>
+        <th width="400"><a href="{% url 'all_stories' %}"><input type="submit" style="color: white;background: palevioletred;
+            border-radius: 5px;width: 50%;padding: 9px;font-size: 80%" value="View_all"></a></th>
+    </tr>
+</table>
+    </div>
+</section>
+
+{% include 'footer.html' %}

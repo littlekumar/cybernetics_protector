@@ -1,0 +1,44 @@
+{% include 'common_page.html' %}
+<section id='showcase'>
+    <div class="container">
+        <BR>
+        <table >
+            <tr >
+                <th width="50" height="25" rowspan="9"></th>
+                <th style="text-align: left" height="40"><a href="{% url 'add_succes_story' %}" style="color: white">Add success stories</a></th>
+            <th width="150" rowspan="9"></th>
+            <th rowspan="9" style="text-align: center" width="800"><h1 STYLE="color: cornflowerblue;font-size: 40px">ADD YOUR SUCCES STORIE</h1><br>
+                        <form action="{% url 'save_succes_story' %}" method="post" id="form">
+            {% csrf_token %}
+                            <table align="center">
+
+                                <tr><th rowspan="3" width="200"></th><th style="text-align: right">
+      <label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Title</label></th>
+                                    <th width="1000" style="text-align: left" height="40"><input type="text" name="title" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;"></th>
+                                </tr>
+                                <tr><th style="text-align: right">
+            <label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Comment</label></th><th width="1000" style="text-align: left">
+                            <textarea name="comment" style="width: 40%;padding: 20px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;"></textarea>
+</th></tr>            <tr><th colspan="2"><input type="submit" style="color: white;background: green;
+            border-radius: 5px;width: 18%;padding: 9px;font-size: 20px" value="Post"></th></tr></table>
+
+        </form>
+
+            </th></tr>
+
+            <tr><th style="text-align: left" height="40"><a href="{% url 'job_posting' %}" style="color: white">Job posting</a></th></tr>
+                        <tr><th style="text-align: left" height="40"><a href="{% url 'applyjob_list' %}" style="color: white">View Applicants</a></th></tr>
+            <tr><th style="text-align: left" height="40"><a href="{% url 'appointing_agent' %}" style="color: white">Case Details</a></th></tr>
+            <tr><th style="text-align: left" height="40"><a href="{% url 'agent_management' %}" style="color: white">Agent Management</a></th></tr>
+            <tr><th style="text-align: left" height="40"><a href="{% url 'reports' %}" style="color: white">Reports</a></th></tr>
+                        <tr><th style="text-align: left" height="40"><a href="{% url 'admin_logout' %}" style="color: white">Logout</a></th></tr>
+
+
+
+        </table>
+        {% if data %}
+            <h2 style="color: peru">{{ data }}</h2>
+        {% endif %}
+    </div>
+</section>
+{% include 'footer.html' %}

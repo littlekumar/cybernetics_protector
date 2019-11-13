@@ -1,0 +1,56 @@
+{% include 'common_page.html' %}
+<section id='showcase'>
+    <div class="container">
+        <BR>
+        <form action="{% url 'applyjob_save' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <table >
+            <tr >
+                <th width="50" height="25" rowspan="8"></th>
+                <th style="text-align: left" height="40"></th>
+            <th width="300" rowspan="9"></th>
+            <th  style="text-align: center;font-size: 35px;color: navajowhite">Apply For Job</th></tr>
+
+            <tr><th style="text-align: left" height="40"><a href="{% url 'home_page' %}" style="color: white">Back To Home</a></th>
+            <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Job Type</label></th>
+                <th style="text-align: left" width="500"><input type="text" name="jobtype" value="{{ data }}"required readonly style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th></tr>
+            <tr><th style="text-align: left" height="40"></th>
+            <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Full Name</label></th>
+                <th style="text-align: left" width="500"><input type="text" name="fullname" required style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th></tr>
+                        <tr><th style="text-align: left" height="40"></th>
+                        <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Dob</label></th>
+                <th style="text-align: left" width="500"><input type="date" name="dob" required  style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th></tr>
+            <tr><th height="40"></th><th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Qualification</label></th>
+                <th style="text-align: left" width="500"><input type="text" name="qualification" required style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th></tr>
+            <tr>
+                <th></th>
+                <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Percentage</label></th>
+                <th style="text-align: left" width="500"><input type="number" required name="percentage" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th>
+            </tr>
+            <tr><th height="40"></th><th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Experiance</label></th>
+                <th style="text-align: left" width="500"><input type="number" name="experiance" required style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th></tr>
+            <tr><th height="40"></th><th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Contact No</label></th>
+                <th style="text-align: left" width="500"><input type="number" name="contactno" required style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th></tr>
+           <tr>
+               <th></th><th></th><th></th><th><input type="submit" style="color: white;background: green;
+            border-radius: 5px;width: 22%;padding: 8px;font-size: 20px"></th>
+           </tr>
+
+
+
+
+        </table>        </form>
+        {% if msg %}
+            <h2 style="color: peru" align="center">{{ msg }}</h2>
+        {% endif %}
+
+    </div>
+</section>
+{% include 'footer.html' %}

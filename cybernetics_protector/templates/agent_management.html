@@ -1,0 +1,32 @@
+{% include 'common_page.html' %}
+<section id='showcase'>
+    <div class="container">
+        <BR>
+        <table >
+            <tr >
+                <th width="50" height="25" rowspan="9"></th>
+                <th style="text-align: left" height="20"><a href="{% url 'add_succes_story' %}" style="color: white">Add success stories</a></th>
+            <th width="300" rowspan="9"></th>
+            <th rowspan="9" style="text-align: center"><h1 STYLE="color: cornflowerblue;font-size: 40px">AGENT MANAGEMENT</h1><BR>
+                           <a href="{% url 'create_agent' %}"><input type="submit" style="color: white;background: green;
+            border-radius: 5px;width: 50%;padding: 12px;font-size: 80%" value="Create Agent"></a><br><br>
+           <a href="{% url 'agent_details' %}?ud='ys'"> <input type="button" style="color: white;background: orange;
+            border-radius: 5px;width: 50%;padding: 12px;font-size: 80%" value="Update Agent"></a><br><br>
+            <a href="{% url 'agent_details' %}"> <input type="button" style="color: white;background: cornflowerblue;
+            border-radius: 5px;width: 50%;padding: 12px;font-size: 80%" value="View Agents"></a>
+
+            </th></tr>
+
+            <tr><th style="text-align: left" height="40"><a href="{% url 'job_posting' %}" style="color: white">Job posting</a></th></tr>
+                        <tr><th style="text-align: left" height="40"><a href="{% url 'applyjob_list' %}" style="color: white">View Applicants</a></th></tr>
+            <tr><th style="text-align: left" height="40"><a href="{% url 'appointing_agent' %}" style="color: white">Case_Details</a></th></tr>
+            <tr><th style="text-align: left" height="40"><a href="{% url 'agent_management' %}" style="color: white">Agent Management</a></th></tr>
+            <tr><th style="text-align: left" height="40"><a href="{% url 'reports' %}" style="color: white">Reports</a></th></tr>
+                        <tr><th style="text-align: left" height="40"><a href="{% url 'admin_logout' %}" style="color: white">Logout</a></th></tr>
+
+
+
+        </table>
+    </div>
+</section>
+{% include 'footer.html' %}

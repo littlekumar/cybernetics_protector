@@ -1,0 +1,25 @@
+{% include 'common_page.html' %}
+<section id="showcase">
+    <div class="container">
+        <h1 align="center" style="color: white">MINISTRY OF DEFENCE LOGIN</h1>
+        <br>
+
+        <div style="align-content: center">
+        <form action="{% url 'minofdef_logincheck' %}" method="post" id="form">
+            {% csrf_token %}
+      <label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Username</label>
+            <input type="text" name="username" style="width: 16%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+            <br><br>
+            <label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Password</label>
+            <input type="password" name="password" style="width: 16%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+            <br><br>
+            <input type="submit" style="color: white;background: green;
+            border-radius: 5px;width: 8%;padding: 9px">
+
+        </form></div>
+    </div>
+    {% if msg %}
+<h2 style="color: red">{{ msg }}</h2>    {% endif %}
+</section>
+
+{% include 'footer.html' %}

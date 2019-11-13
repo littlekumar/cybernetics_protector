@@ -1,0 +1,53 @@
+{% include 'common_page.html' %}
+<section id='showcase'>
+    <div class="container">
+        <BR>
+        <form action="{% url 'save_case' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <table >
+            <tr >
+                <th width="50" height="25" rowspan="7"></th>
+                <th style="text-align: left" height="40"><a href="{% url 'create_case' %}" style="color: white">Case_Create</a></th>
+            <th width="300" rowspan="9"></th>
+            <th  style="text-align: center;font-size: 35px;color: navajowhite">Create Case</th></tr>
+
+            <tr><th style="text-align: left" height="40"><a href="{% url 'agent_details' %}" style="color: white">Agent_Details</a></th>
+            <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Case_Id</label></th>
+                <th style="text-align: left" width="500"><input type="number" name="caseid" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th></tr>
+            <tr><th style="text-align: left" height="40"><a href="{% url 'reports' %}" style="color: white">Reports</a></th>
+            <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Case_Name</label></th>
+                <th style="text-align: left" width="500"><input type="text" name="case_name" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th></tr>
+                        <tr><th style="text-align: left" height="40"><a href="/job/" style="color: white">Logout</a></th>
+                        <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Case_Details</label></th>
+                <th style="text-align: left" width="500"><input type="text" name="case_details" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th></tr>
+            <tr><th height="40"></th><th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Date_of_Creation</label></th>
+                <th style="text-align: left" width="500"><input type="date" name="doc" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th></tr>
+            <tr>
+                <th></th>
+                <th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Evidence_Provided</label></th>
+                <th style="text-align: left" width="500"><input type="text" name="evidence_provided" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th>
+            </tr>
+            <tr><th height="40"></th><th style="text-align: center"><label style="padding: 12px 12px 12px 0;font-size: 25px;color: white">Evidence_Proof</label></th>
+                <th style="text-align: left" width="500"><input type="file" name="evidence_proof" style="width: 45%;padding: 8px;border: 1px solid #ccc;border-radius: 3px;resize: vertical;">
+                 </th></tr>
+           <tr>
+               <th></th><th></th><th></th><th><input type="submit" style="color: white;background: green;
+            border-radius: 5px;width: 22%;padding: 8px;font-size: 20px"></th>
+           </tr>
+
+
+
+
+        </table>        </form>
+        {% if msg %}
+            <h2 style="color: peru" align="center">{{ msg }}</h2>
+        {% endif %}
+
+    </div>
+</section>
+{% include 'footer.html' %}

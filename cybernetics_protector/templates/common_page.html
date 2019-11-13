@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/one.css' %}">
+</head>
+<body>
+<header id="main-header">
+    <div class="container">
+        <table align="center"><th>
+    <img src="{% static 'images/cbi_logo.png' %}"></th>
+        <th><h1>WELCOME TO CYBERNETICS PROTECTOR</h1></th></table>
+        </div>
+</header>
+<nav id="navbar">
+    <div class="container">
+        <ul>
+            <li><a href="{% url 'home_page' %}">Home</a> </li>
+            <li><a href="{% url 'admin_loginpage' %}">Admin_Login</a> </li>
+            <li><a href="{% url 'agent_loginpage' %}"> Agent_Login</a></li>
+            <li><a href="{% url 'ministryof_loginpage' %}">Ministry_of_def</a> </li>
+            <li><a href="{% url 'aboutus_page' %}">About & Contact us</a> </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+
+</body>
+</html>

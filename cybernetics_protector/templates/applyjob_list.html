@@ -1,0 +1,64 @@
+{% include 'common_page.html' %}
+<section id="showcase">
+    <div class="container">
+    <table>
+        <tr>
+            <th width="200"></th><th><h2 align="center" style="color: gold;padding-right: 100px"> Apply For Job </h2></th>
+        <th width="300" ></th>
+        <th> <a href="" style="color: white">back</a></th></tr>
+    </table>
+
+        {% if data %}
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+</style>
+
+
+<table align="center">
+  <tr style="color: white">
+      <th width="30"></th>
+  <th>Name</th>
+  <th>Qualification</th>
+              <th>Percentage</th>
+      <th>Dob</th>
+  <th>Experiance</th>
+  <th>Job</th>
+  <th>Contact No</th>
+
+
+  </tr>
+    {% for x in data %}
+  <tr style="color:chocolate;font-weight: bold;font-size: 80%">
+  <td width="30"></td>
+  <td>{{ x.Full_Name}}</td>
+  <td>{{ x.Qualification}}</td>
+    <td>{{ x.percentage}}</td>
+  <td>{{ x.Dob}}</td>
+  <td>{{ x.Experience }}</td>
+  <td>{{ x.JOB_TITLE}}</td>
+    <td>{{ x.Contact_Number}}</td>
+
+
+  </tr>
+    {% endfor %}
+
+</table>
+
+        {% endif %}
+
+    </div>
+</section>
+
+{% include 'footer.html' %}

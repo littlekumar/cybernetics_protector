@@ -1,0 +1,25 @@
+{% include 'common_page.html' %}
+<section id='showcase'>
+    <div class="container">
+        <BR>
+        <table >
+            <tr >
+                <th width="50" height="25" rowspan="9"></th>
+                <th style="text-align: left" height="40"><a href="{% url 'add_succes_story' %}" style="color: white">Add success stories</a></th>
+            <th width="300" rowspan="9"></th>
+            <th rowspan="9" style="text-align: center"><p STYLE="color: cornflowerblue;font-size: 40px">Appointing Case to a Agent</p>
+            {{ form.as_p }}
+
+            <tr><th style="text-align: left" height="40"><a href="{% url 'job_posting' %}" style="color: white">Job posting</a></th></tr>
+                        <tr><th style="text-align: left" height="40"><a href="{% url 'applyjob_list' %}" style="color: white">View Applicants</a></th></tr>
+            <tr><th style="text-align: left" height="40"><a href="{% url 'appointing_agent' %}" style="color: white">Appointing agent</a></th></tr>
+            <tr><th style="text-align: left" height="40"><a href="{% url 'agent_management' %}" style="color: white">Agent Management</a></th></tr>
+            <tr><th style="text-align: left" height="40"><a href="{% url 'reports' %}" style="color: white">Reports</a></th></tr>
+                        <tr><th style="text-align: left" height="40"><a href="{% url 'admin_logout' %}" style="color: white">Logout</a></th></tr>
+
+
+
+        </table>
+    </div>
+</section>
+{% include 'footer.html' %}
